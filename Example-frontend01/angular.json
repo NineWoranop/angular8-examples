@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Example-frontend01": {
+    "example-frontend01": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,12 +17,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Example-frontend01",
+            "outputPath": "dist/example-frontend01",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
+            "aot": false,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -45,6 +45,7 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -66,19 +67,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Example-frontend01:build",
+            "browserTarget": "example-frontend01:build",
             "proxyConfig": "proxy.conf.js"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Example-frontend01:build:production"
+              "browserTarget": "example-frontend01:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Example-frontend01:build"
+            "browserTarget": "example-frontend01:build"
           }
         },
         "test": {
@@ -115,15 +116,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Example-frontend01:serve"
+            "devServerTarget": "example-frontend01:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Example-frontend01:serve:production"
+              "devServerTarget": "example-frontend01:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "Example-frontend01"
+  "defaultProject": "example-frontend01"
 }
